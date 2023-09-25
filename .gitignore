@@ -1,0 +1,15 @@
+node_modules
+.idea
+/.vscode
+dist
+/build
+/coverage
+./test
+.DS_Store
+tmp
+*.log
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
+.vercel

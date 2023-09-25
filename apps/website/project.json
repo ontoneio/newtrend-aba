@@ -1,0 +1,41 @@
+{
+    "root": "apps/website",
+    "targets": {
+      "test": {
+        "executor": "@nx/jest:jest",
+        "options": {}
+      },
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/website",
+          "command": "astro check && tsc --noEmit && dotenv -e ../../.env.development  -- astro build"
+        },
+        "configurations":{ 
+          "staging":{
+            "command": "astro check && tsc --noEmit && dotenv -e ../../.env.staging -- astro build"
+          },
+          "production":{
+            "command": "astro check && tsc --noEmit && dotenv -e ../../.env.production -- astro build"
+          }
+        }
+      },
+      "dev": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/website",
+          "command":"dotenv -e ../../.env.development -- astro dev"
+        }
+      },
+      "preview": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/website",
+          "commands":[
+            "astro preview"
+          ]
+        }
+      }
+    }
+  }   
+  
