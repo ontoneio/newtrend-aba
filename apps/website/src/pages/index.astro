@@ -2,14 +2,38 @@
 import Card from "../components/Card.astro";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-import { getPosts } from "../utils/sanity"
+import { getHome } from "../utils/sanity"
 
 
-const posts = await getPosts();
+const { title, headline, imageProfile, phone, email } = await getHome();
 ---
 
-<Layout title="Jonellie Wedding 2025">
-  <section>
-    {posts.length ? posts.map((post) => <Card post={post} />) : <Welcome />}
+<Layout title={title}>
+  <section class="bg-white dark:bg-gray-900 antialiased">
+    <div class="flex flex-col justify-evenly items-center max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:items-start lg:px-6 sm:py-16 lg:py-24">
+      <div class="max-w-5xl flex flex-col items-center">
+        <h2 class="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl dark:text-white">
+          { headline }
+        </h2>
+        <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
+          { title }
+        </p>
+        <p class="text-base font-medium text-gray-500 dark:text-gray-400">
+          { phone }
+        </p>
+        <p class="text-base font-medium text-gray-500 dark:text-gray-400">
+          { email }
+        </p>
+      </div>
+  
+      <div class="mt-4">
+        <div class="h-full">
+          <img class="object-cover object-top w-auto h-auto lg:h-350px rounded-lg" src={ imageProfile }
+            alt="">
+          
+        </div>
+      </div>
+  
+    </div>
   </section>
 </Layout>

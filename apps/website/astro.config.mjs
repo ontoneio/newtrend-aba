@@ -23,7 +23,9 @@ export default defineConfig({
   ],
   integrations: [
     UnoCSS(),
-    sanity({...SanityConfig, token: `${process.env.SANITY_AUTH_TOKEN}`}),
+    sanity({...SanityConfig, 
+      token: `${process.env.SANITY_STUDIO_AUTH_TOKEN}`
+    }),
     react(),
   ],
   server:{
