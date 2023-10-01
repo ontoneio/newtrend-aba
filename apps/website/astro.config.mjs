@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import sanity from "@sanity/astro";
 import SanityConfig from "../../sanity.config"
 import react from '@astrojs/react';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel/static';
 import tsconfigPaths from 'vite-tsconfig-paths'
 import UnoCSS from 'unocss/astro'
 // import { config } from 'dotenv'
@@ -14,7 +14,7 @@ import UnoCSS from 'unocss/astro'
 export default defineConfig({
   root: '../../',
   output: 'static',
-  // adapter: vercel(),
+  adapter: vercel(),
   plugins: [
     tsconfigPaths({
       root: "./",
