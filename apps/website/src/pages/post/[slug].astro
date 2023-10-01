@@ -20,7 +20,7 @@ const { slug } = Astro.params as Params;
 const post = await getPost(slug);
 ---
 
-<Layout title={post.title!}>
+<Layout pageTitle={post.title!}>
   <section class="post">
     {
       post.mainImage ? (

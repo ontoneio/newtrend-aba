@@ -1,9 +1,9 @@
 ---
 interface Props {
-  title: string;
+  pageTitle: string | undefined;
 }
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 
 ---
 
@@ -40,7 +40,7 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
 
-    <title>{title}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <div class="container">

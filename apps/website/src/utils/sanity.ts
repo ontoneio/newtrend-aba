@@ -5,7 +5,7 @@ import type { ImageAsset, Slug } from "@sanity/types";
 
 const client = useSanityClient()
 
-export async function getHome(): Promise<Home[]> {
+export async function getHome(): Promise<Home> {
   return await client.fetch(
     groq`*[_type == "homepage"][0]{
       _type,
@@ -39,10 +39,9 @@ export interface Home {
   _createdAt: string;
   title?: string;
   headline?: string;
-  imageProfile?: ImageAsset;
+  imageProfile?: string;
   email: string;
   phone: string; 
-  
 }
 
 export interface Post {

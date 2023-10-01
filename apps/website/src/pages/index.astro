@@ -6,7 +6,7 @@ import { getHome } from "../utils/sanity"
 const { title, headline, imageProfile, phone, email } = await getHome();
 ---
 
-<Layout title={title}>
+<Layout pageTitle={title}>
   <section class="bg-white dark:bg-gray-900 antialiased">
     <div class="flex flex-col justify-evenly items-center max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:items-start lg:px-6 sm:py-16 lg:py-24">
       <div class="max-w-5xl flex flex-col items-center">

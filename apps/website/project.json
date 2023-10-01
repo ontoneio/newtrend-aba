@@ -9,7 +9,7 @@
         "executor": "nx:run-commands",
         "options": {
           "cwd": "apps/website",
-          "command": "astro check && tsc --noEmit && dotenv -e ../../.env.development  -- astro build"
+          "command": "astro check && tsc --noEmit && dotenv -- astro build"
         },
         "configurations":{ 
           "staging":{

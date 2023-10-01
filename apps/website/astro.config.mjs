@@ -13,8 +13,8 @@ import UnoCSS from 'unocss/astro'
 // https://astro.build/config
 export default defineConfig({
   root: '../../',
-  output: 'hybrid',
-  adapter: vercel(),
+  output: 'static',
+  // adapter: vercel(),
   plugins: [
     tsconfigPaths({
       root: "./",
