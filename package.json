@@ -10,7 +10,7 @@
     "ci-install": "npm ci --save-exact --bin-links --include-workspace-root --workspaces --no-audit",
     "refresh": "npm install --save-exact --bin-links --include-workspace-root --workspaces",
     "test-dotenv": "dotenv -- bash -c 'echo \"$SANITY_STUDIO_BASEPATH\"'",
-    "dev": "nx run-many -t dev --projects website,cms",
+    "dev": "nx run-many -t dev --projects website,studio",
     "vault": "npx dotenv-vault@latest build",
     "build": "nx run website:build:production"
   },
@@ -59,6 +59,9 @@
   "nx": {},
   "workspaces": [
     "apps/website",
-    "apps/cms"
-  ]
+    "apps/studio"
+  ],
+  "dependencies": {
+    "@astrojs/check": "^0.2.0"
+  }
 }

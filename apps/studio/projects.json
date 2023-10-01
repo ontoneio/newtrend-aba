@@ -1,5 +1,5 @@
 {
-    "root": "apps/website",
+    "root": "apps/studio",
     "targets": {
       "test": {
         "executor": "@nx/jest:jest",
@@ -8,7 +8,7 @@
       "build": {
         "executor": "nx:run-commands",
         "options": {
-          "cwd": "apps/website",
+          "cwd": "apps/studio",
           "command": "astro check && dotenv -- astro build"
         },
         "configurations":{ 
@@ -23,14 +23,14 @@
       "dev": {
         "executor": "nx:run-commands",
         "options": {
-          "cwd": "apps/website",
-          "command":"dotenv -e ../../.env.development -- astro dev"
+          "cwd": "apps/studio",
+          "command":"dotenv -e ../../.env.development -- sanity dev"
         }
       },
       "preview": {
         "executor": "nx:run-commands",
         "options": {
-          "cwd": "apps/website",
+          "cwd": "apps/studio",
           "commands":[
             "astro preview"
           ]

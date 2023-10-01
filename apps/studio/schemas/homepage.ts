@@ -1,4 +1,4 @@
-import {defineField, defineType, StringRule } from 'sanity'
+import {defineField, defineType, type StringRule } from 'sanity'
 
 export default defineType({
     name: 'homepage',

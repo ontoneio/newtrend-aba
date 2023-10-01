@@ -1,4 +1,4 @@
-import { resolve, dirname } from 'path';
+import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 export function formatDate(date: string) {

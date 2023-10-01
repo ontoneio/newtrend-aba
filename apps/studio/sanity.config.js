@@ -1,8 +1,8 @@
 // import { defineConfig } from 'sanity'
 import { deskTool } from "sanity/desk"
 import { visionTool } from "@sanity/vision"
-import { schemaTypes } from './apps/website/src/assets/schemas'
-import { singletonTypes, singletonActions } from './apps/website/src/utils/singleton'
+import { schemaTypes } from './schemas'
+import { singletonTypes, singletonActions } from '../website/src/utils/singleton'
 
 export default {
       name: 'newtrend-aba',
@@ -10,7 +10,6 @@ export default {
       projectId: 'mwytgv17',
       useCdn: true,
       dataset: 'production',
-      studioBasePath: '/admin',
       apiVersion: 'v2023-03-07',
       plugins: [deskTool(), visionTool()],
       schema: {

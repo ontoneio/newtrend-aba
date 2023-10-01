@@ -1,9 +1,9 @@
 import groq from 'groq';
-import { useSanityClient } from "@sanity/astro";
+import { sanityClient } from "sanity:client";
 import type { PortableTextBlock } from "@portabletext/types";
 import type { ImageAsset, Slug } from "@sanity/types";
 
-const client = useSanityClient()
+const client = sanityClient
 
 export async function getHome(): Promise<Home> {
   return await client.fetch(

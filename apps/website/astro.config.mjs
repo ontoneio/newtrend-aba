@@ -1,14 +1,9 @@
 import { defineConfig } from "astro/config";
 import sanity from "@sanity/astro";
-import SanityConfig from "../../sanity.config"
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/static';
 import tsconfigPaths from 'vite-tsconfig-paths'
 import UnoCSS from 'unocss/astro'
-// import { config } from 'dotenv'
-// import { expand } from 'dotenv-expand'
-
-// expand(config)
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,8 +18,12 @@ export default defineConfig({
   ],
   integrations: [
     UnoCSS(),
-    sanity({...SanityConfig, 
-      token: `${process.env.SANITY_STUDIO_AUTH_TOKEN}`
+    sanity({
+      projectId: 'mwytgv17',
+      useCdn: false,
+      dataset: 'production',
+      apiVersion: 'v2023-03-07',
+      token: `${process.env.ASTRO_VIEWER_AUTH}`
     }),
     react(),
   ],
