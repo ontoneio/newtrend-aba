@@ -1,23 +1,25 @@
 {
     "root": "apps/studio",
     "targets": {
-      "test": {
-        "executor": "@nx/jest:jest",
-        "options": {}
-      },
       "build": {
         "executor": "nx:run-commands",
         "options": {
           "cwd": "apps/studio",
-          "command": "astro check && dotenv -- astro build"
-        },
-        "configurations":{ 
-          "staging":{
-            "command": "astro check && tsc --noEmit && dotenv -e ../../.env.staging -- astro build"
-          },
-          "production":{
-            "command": "astro check && tsc --noEmit && dotenv -e ../../.env.production -- astro build"
-          }
+          "command": "dotenv -- sanity build"
+        }
+      },
+      "deploy": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/studio",
+          "command":"dotenv -- npx sanity deploy"
+        }
+      },
+      "undeploy": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/studio",
+          "command":"dotenv -- npx sanity undeploy"
         }
       },
       "dev": {
@@ -25,15 +27,6 @@
         "options": {
           "cwd": "apps/studio",
           "command":"dotenv -e ../../.env.development -- sanity dev"
-        }
-      },
-      "preview": {
-        "executor": "nx:run-commands",
-        "options": {
-          "cwd": "apps/studio",
-          "commands":[
-            "astro preview"
-          ]
         }
       }
     }
