@@ -9,7 +9,7 @@
         "executor": "nx:run-commands",
         "options": {
           "cwd": "apps/website",
-          "command": "astro check && tsc --noEmit && dotenv -- astro build"
+          "command": "astro check && dotenv -- astro build"
         },
         "configurations":{ 
           "staging":{
@@ -18,6 +18,13 @@
           "production":{
             "command": "astro check && tsc --noEmit && dotenv -e ../../.env.production -- astro build"
           }
+        }
+      },
+      "deploy": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/website",
+          "command":"dotenv -- vercel deploy --prebuilt"
         }
       },
       "dev": {

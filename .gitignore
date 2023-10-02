@@ -13,3 +13,4 @@ tmp
 !.env.project
 !.env.vault
 .vercel
+.env*.local

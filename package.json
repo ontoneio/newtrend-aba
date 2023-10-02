@@ -3,36 +3,35 @@
   "version": "0.0.1",
   "private": true,
   "volta": {
-    "node": "18.17.0",
-    "vercel": "31.2.0"
+    "node": "18.17.0"
   },
   "scripts": {
     "ci-install": "npm ci --save-exact --bin-links --include-workspace-root --workspaces --no-audit",
     "refresh": "npm install --save-exact --bin-links --include-workspace-root --workspaces",
     "test-dotenv": "dotenv -- bash -c 'echo \"$SANITY_STUDIO_BASEPATH\"'",
-    "dev": "nx run-many -t dev --projects website,cms",
+    "dev": "nx run-many -t dev --projects website,studio",
     "vault": "npx dotenv-vault@latest build",
-    "build": "nx run website:build:production"
+    "build": "nx run-many -t build --projects website,studio"
   },
   "devDependencies": {
-    "@astrojs/node": "^5.3.2",
+    "@astrojs/node": "^6.0.1",
     "@astrojs/react": "^2.3.2",
-    "@astrojs/vercel": "^3.8.0",
+    "@astrojs/vercel": "^5.0.1",
     "@hono/node-server": "^1.1.1",
     "@portabletext/types": "^2.0.2",
-    "@sanity/astro": "^1.1.5",
+    "@sanity/astro": "^2.0.0",
     "@sanity/client": "^6.0.0",
-    "@sanity/eslint-config-studio": "^2.0.4",
+    "@sanity/eslint-config-studio": "^3.0.1",
     "@sanity/image-url": "^1.0.2",
     "@sanity/types": "^3.7.1",
-    "@sanity/vision": "^3.14.4",
+    "@sanity/vision": "^3.16.7",
+    "sanity-plugin-vercel-deploy": "^3.3.4",
     "@types/node": "^20.4.8",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.26",
     "@unocss/preset-wind": "^0.55.7",
-    "@vite-pwa/astro": "^0.1.1",
-    "astro": "^2.1.7",
+    "astro": "^3.2.0",
     "astro-portabletext": "^0.9.0",
     "autoprefixer": "^10.4.14",
     "dotenv": "^16.3.1",
@@ -50,7 +49,7 @@
     "react-is": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "rimraf": "^4.4.1",
-    "sanity": "^3.14.4",
+    "sanity": "^3.16.7",
     "styled-components": "^5.3.11",
     "typescript": "^5.0.2",
     "unocss": "^0.55.7",
@@ -60,6 +59,6 @@
   "nx": {},
   "workspaces": [
     "apps/website",
-    "apps/cms"
+    "apps/studio"
   ]
 }

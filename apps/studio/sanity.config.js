@@ -1,18 +1,18 @@
-// import { defineConfig } from 'sanity'
+import { defineConfig } from 'sanity'
 import { deskTool } from "sanity/desk"
 import { visionTool } from "@sanity/vision"
-import { schemaTypes } from './apps/website/src/assets/schemas'
-import { singletonTypes, singletonActions } from './apps/website/src/utils/singleton'
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
+import { schemaTypes } from './schemas'
+import { singletonTypes, singletonActions } from '../website/src/utils/singleton'
 
-export default {
+export default defineConfig({
       name: 'newtrend-aba',
       title: 'New Trend ABA',
       projectId: 'mwytgv17',
       useCdn: true,
       dataset: 'production',
-      studioBasePath: '/admin',
       apiVersion: 'v2023-03-07',
-      plugins: [deskTool(), visionTool()],
+      plugins: [deskTool(), visionTool(), vercelDeployTool()],
       schema: {
         types: schemaTypes,
         templates: (templates) =>
@@ -26,4 +26,4 @@ export default {
             ? input.filter(({ action }) => action && singletonActions.has(action))
             : input,
       },
-}
+})
