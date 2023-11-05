@@ -18,6 +18,7 @@ export default defineConfig({
   ],
   integrations: [
     UnoCSS(),
+    react(),
     sanity({
       projectId: 'mwytgv17',
       useCdn: false,
@@ -25,7 +26,6 @@ export default defineConfig({
       apiVersion: 'v2023-03-07',
       token: `${process.env.ASTRO_VIEWER_AUTH}`
     }),
-    react(),
   ],
   server:{
     port: import.meta.env.NODE_ENV !== 'production' ? 3000 : import.meta.env.PORT

@@ -1,13 +1,10 @@
 {
   "name": "studio",
   "version": "1.0.0",
-  "keywords": [
-    "sanity"
-  ],
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+  "scripts": {
+    "dev": "dotenv -e ../../.env -- sanity dev"
+  },
+  "dependencies": {
+    "styled-components": "^6.1.0"
   }
 }
