@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "volta": {
-    "node": "18.17.0"
+    "node": "18.18.2"
   },
   "scripts": {
     "ci-install": "npm ci --save-exact --bin-links --include-workspace-root --workspaces --no-audit",
@@ -42,7 +42,7 @@
     "groq": "^3.8.1",
     "hono": "^3.6.0",
     "node-fetch": "^3.3.2",
-    "nx": "16.5.5",
+    "nx": "17.0.3",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",
     "react": "^18.2.0",
@@ -50,14 +50,13 @@
     "react-is": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "rimraf": "^4.4.1",
-    "sanity": "^3.16.7",
+    "sanity": "^3.19.1",
     "styled-components": "^5.3.11",
-    "typescript": "^5.0.2",
+    "typescript": "5.2.2",
     "unocss": "^0.55.7",
     "vercel": "^32.3.1",
-    "vite-tsconfig-paths": "^4.2.0"
+    "vite-tsconfig-paths": "^4.2.1"
   },
-  "nx": {},
   "workspaces": [
     "apps/website",
     "apps/studio"
