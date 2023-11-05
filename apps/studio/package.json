@@ -2,8 +2,10 @@
   "name": "studio",
   "private": true,
   "version": "1.0.0",
-  "main": "package.json",
-  "scripts": {},
+  "main": "dist/index.html",
+  "scripts": {
+    "dev": "dotenv -- sanity dev"
+  },
   "keywords": [
     "sanity"
   ],
