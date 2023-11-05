@@ -31,7 +31,7 @@
         "executor": "nx:run-commands",
         "options": {
           "cwd": "apps/website",
-          "command":"dotenv -e ../../.env.development -- astro dev"
+          "command":"dotenv -- bash -c 'astro dev'"
         }
       },
       "preview": {

@@ -9,11 +9,14 @@
   "keywords": [
     "sanity"
   ],
-  "nx":{},
+  "nx": {},
   "prettier": {
     "semi": false,
     "printWidth": 100,
     "bracketSpacing": false,
     "singleQuote": true
+  },
+  "dependencies": {
+    "styled-components": "^6.1.0"
   }
 }

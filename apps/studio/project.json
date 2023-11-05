@@ -1,0 +1,13 @@
+{
+    "root": "apps/studio",
+    "targets": {
+      "dev": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "apps/studio",
+          "command":"dotenv -- sanity dev"
+        }
+      }
+    }
+  }   
+  
