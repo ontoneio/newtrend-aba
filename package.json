@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "volta": {
-    "node": "18.17.0"
+    "node": "18.18.2"
   },
   "scripts": {
     "ci-install": "npm ci --save-exact --bin-links --include-workspace-root --workspaces --no-audit",
@@ -14,20 +14,20 @@
     "build": "nx run-many -t build --projects website,studio"
   },
   "devDependencies": {
-    "@astrojs/node": "^6.0.1",
-    "@astrojs/react": "^2.3.2",
-    "@astrojs/vercel": "^5.0.1",
-    "@astrojs/check": "0.2.0",
-    "@hono/node-server": "^1.1.1",
-    "@portabletext/types": "^2.0.2",
-    "@sanity/astro": "^2.0.0",
-    "@sanity/client": "^6.0.0",
-    "@sanity/eslint-config-studio": "^3.0.1",
-    "@sanity/image-url": "^1.0.2",
-    "@sanity/types": "^3.7.1",
-    "@sanity/vision": "^3.16.7",
-    "sanity-plugin-vercel-deploy": "^3.3.4",
-    "@types/node": "^20.4.8",
+    "@astrojs/node": "6.0.3",
+    "@astrojs/react": "3.0.4",
+    "@astrojs/vercel": "5.1.0",
+    "@astrojs/check": "0.3.1",
+    "@hono/node-server": "1.2.0",
+    "@portabletext/types": "2.0.8",
+    "@sanity/astro": "2.1.4",
+    "@sanity/client": "6.7.0",
+    "@sanity/eslint-config-studio": "3.0.1",
+    "@sanity/image-url": "1.0.2",
+    "@sanity/types": "3.19.1",
+    "@sanity/vision": "3.19.1",
+    "sanity-plugin-vercel-deploy": "3.3.4",
+    "@types/node": "^20.8.10",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/styled-components": "^5.1.26",
@@ -40,9 +40,9 @@
     "dotenv-expand": "^10.0.0",
     "eslint": "^8.6.0",
     "groq": "^3.8.1",
-    "hono": "^3.6.0",
+    "hono": "^3.9.2",
     "node-fetch": "^3.3.2",
-    "nx": "16.5.5",
+    "nx": "17.0.3",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.10.0",
     "react": "^18.2.0",
@@ -50,16 +50,14 @@
     "react-is": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "rimraf": "^4.4.1",
-    "sanity": "^3.16.7",
+    "sanity": "^3.19.1",
     "styled-components": "^5.3.11",
     "typescript": "^5.0.2",
     "unocss": "^0.55.7",
     "vercel": "^32.3.1",
     "vite-tsconfig-paths": "^4.2.0"
   },
-  "nx": {},
   "workspaces": [
-    "apps/website",
-    "apps/studio"
+    "apps/*"
   ]
 }
