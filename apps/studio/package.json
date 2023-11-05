@@ -3,11 +3,11 @@
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
-  "license": "UNLICENSED",
   "scripts": {},
   "keywords": [
     "sanity"
   ],
+  "nx":{},
   "prettier": {
     "semi": false,
     "printWidth": 100,
