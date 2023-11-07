@@ -1,0 +1,19 @@
+---
+const {imgSrc} = Astro.props
+---
+<section class:list={['bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-700', 'bg-blend-multiply']}>
+    <!-- <BackgroundImage
+        src={imgSrc}
+        tag="section"
+        backgroundSize="cover"
+        position="center"
+    >
+        <slot />
+    </BackgroundImage> -->
+</section>
+
+<style define:vars={{ imgSrc }}>
+    section {
+        background-image: url(var(--imgSrc)+);
+    }
+</style>
