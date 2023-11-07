@@ -12,9 +12,20 @@ export async function getHome(): Promise<Home> {
       _createdAt,
       title,
       headline,
-      "imageProfile":profileImage.asset->url,
+      "hero": heroImage.asset->url,
+      "imageProfile":smallProfile.profileImage.asset->url,
+      "caption": smallProfile.profileCaption,
+      content,
       email,
-      phone
+      phone,
+      soundcloudLink
+    }`
+  );
+}
+export async function getHero(): Promise<Hero> {
+  return await client.fetch(
+    groq`*[_type == "homepage"][0]{
+      "hero": heroImage.asset->url,
     }`
   );
 }
@@ -34,14 +45,22 @@ export async function getPost(slug: string): Promise<Post> {
   );
 }
 
+export interface Hero {
+  hero?: string; 
+}
+
 export interface Home {
   _type: "homepage";
   _createdAt: string;
   title?: string;
   headline?: string;
+  hero?: string;
   imageProfile?: string;
+  caption?: string;
+  content?: Array;
   email: string;
-  phone: string; 
+  phone: string;
+  soundcloudLink: string; 
 }
 
 export interface Post {
