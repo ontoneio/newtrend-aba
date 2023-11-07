@@ -17,12 +17,27 @@ export default defineType({
         type: 'string',
       }),
       defineField({
-        name: 'profileImage',
-        title: 'Profile image',
+        name: 'heroImage',
+        title: 'Hero image',
         type: 'image',
         options: {
           hotspot: true,
         },
+      }),
+      defineField({
+        name: 'smallProfile',
+        title: 'Profile',
+        type: 'object',
+        fields:[
+          { name: 'profileImage', type: 'image', title: 'Profile Image', options: { hotspot: true }},
+          { name: 'profileCaption', type: 'string', title: 'Profile Caption'},
+        ]
+      }),
+      defineField({
+        title: 'Content', 
+        name: 'content',
+        type: 'array', 
+        of: [{type: 'block'}]
       }),
       defineField({
         name: 'email',
@@ -35,6 +50,11 @@ export default defineType({
         title: 'Phone Number',
         type: 'string',
         validation: (Rule:StringRule) => Rule.regex(/(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g, 'US Phone')
+      }),
+      defineField({
+        name: 'soundcloudLink',
+        title: 'Soundcloud Link',
+        type: 'url',
       })
     ],
   })
