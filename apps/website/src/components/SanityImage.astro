@@ -20,8 +20,8 @@ const image = node && builder
   .url()
 const imageUrl = `url(${image})`
 ---
-<section class:list={['relative']}>
-  <div class:list={['absolute','bg-wrapper','bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-400', 'bg-blend-multiply', 'w-full']}>
+<section class:list={["relative"]}>
+  <div class:list={['bg-wrapper','bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-400', 'bg-blend-multiply', 'w-full']}>
     <slot />
   </div>
 </section>
