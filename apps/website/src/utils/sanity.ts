@@ -12,8 +12,8 @@ export async function getHome(): Promise<Home> {
       _createdAt,
       title,
       headline,
-      "hero": heroImage.asset->url,
-      "imageProfile":smallProfile.profileImage.asset->url,
+      "hero": heroImage,
+      "imageProfile":smallProfile.profileImage,
       "caption": smallProfile.profileCaption,
       content,
       email,
@@ -57,7 +57,7 @@ export interface Home {
   hero?: string;
   imageProfile?: string;
   caption?: string;
-  content?: Array;
+  content?: Array<Object>;
   email: string;
   phone: string;
   soundcloudLink: string; 

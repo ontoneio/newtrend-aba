@@ -1,7 +1,8 @@
 ---
 const {imgSrc} = Astro.props
 ---
-<section class:list={['bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-700', 'bg-blend-multiply']}>
+<!-- <section class:list={['bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-700', 'bg-blend-multiply']}> -->
+<section >
     <!-- <BackgroundImage
         src={imgSrc}
         tag="section"
@@ -12,8 +13,3 @@ const {imgSrc} = Astro.props
     </BackgroundImage> -->
 </section>
 
-<style define:vars={{ imgSrc }}>
-    section {
-        background-image: url(var(--imgSrc)+);
-    }
-</style>

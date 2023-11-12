@@ -1,5 +1,6 @@
 ---
 import imageUrlBuilder from "@sanity/image-url";
+import type { Image } from "@sanity/types";
 import { sanityClient } from "sanity:client";
 
 
@@ -16,6 +17,19 @@ const image = node && builder
   .width(width)
   .fit('max')
   .auto('format')
+  .url()
+const imageUrl = `url(${image})`
 ---
+<section class:list={['relative']}>
+  <div class:list={['absolute','bg-wrapper','bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-400', 'bg-blend-multiply', 'w-full']}>
+    <slot />
+  </div>
+</section>
 
-{image && <img src={image.url()} alt={node.alt || ""} title={node.alt} />}
+<!-- {image && <img src={image.url()} alt={node.alt || ""} title={node.alt} />} -->
+
+<style define:vars={{ imageUrl }}>
+  .bg-wrapper {
+    background-image: var(--imageUrl);
+  }
+</style>

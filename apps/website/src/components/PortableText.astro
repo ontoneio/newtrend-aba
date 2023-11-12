@@ -1,17 +1,26 @@
 ---
 import {PortableText as PortableTextInternal} from "astro-portabletext"
+import * as baseComponents from "astro-portabletext/components"
+import { mergeComponents } from "astro-portabletext/utils";
+// import type { Block, Props as $ } from "astro-portabletext/types";
 import SanityImage from "./SanityImage.astro";
 import List from "./List.astro";
 
-const {blocks} = Astro.props
+import { Debug } from 'astro:components';
+
+
+// export type Props = $<Block>;
+const { blocks } = Astro.props;
+
 const components = {
-  type: {
-    image: SanityImage,
-  },
   list: {
     bullet: List
   },
 };
+
+const combo = mergeComponents(baseComponents, components)
 ---
 
-<PortableTextInternal value={blocks.content} components={components} />
+<!-- <Debug {blocks.content} /> -->
+<PortableTextInternal value={blocks.content} components={combo} />
+<!-- <PortableTextInternal value={blocks.content} components={components} /> -->
