@@ -7,7 +7,6 @@ interface Props {
 }
 
 const { pageTitle } = Astro.props;
-
 ---
 
 <!DOCTYPE html>
@@ -40,7 +39,7 @@ const { pageTitle } = Astro.props;
           >Astro + Sanity</a
         > -->
       </header>
-      <main>
+      <main class:list={['flex', 'flex-col','items-center']}>
         <slot />
       </main>
       <footer class="footer">

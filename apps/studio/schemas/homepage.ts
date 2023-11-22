@@ -30,7 +30,8 @@ export default defineType({
         type: 'object',
         fields:[
           { name: 'profileImage', type: 'image', title: 'Profile Image', options: { hotspot: true }},
-          { name: 'profileCaption', type: 'string', title: 'Profile Caption'},
+          { name: 'nameCaption', type: 'string', title: 'Profile Name Caption'},
+          { name: 'titleCaption', type: 'string', title: 'Profile Title Caption'},
         ]
       }),
       defineField({
