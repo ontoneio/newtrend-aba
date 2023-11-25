@@ -57,7 +57,8 @@ export interface Home {
   headline?: string;
   hero?: string;
   imageProfile?: string;
-  caption?: string;
+  nameCaption?: string;
+  titleCaption?: string;
   content?: Array<Object>;
   email: string;
   phone: string;

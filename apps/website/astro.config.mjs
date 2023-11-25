@@ -3,10 +3,10 @@ import sanity from "@sanity/astro";
 import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/static';
 import tsconfigPaths from 'vite-tsconfig-paths'
-// import UnoCSS from 'unocss/astro'
+import UnoCSS from 'unocss/astro'
 // import tailwind from "@astrojs/tailwind";
 import { astroImageTools } from "astro-imagetools";
-import WindiCSS from 'vite-plugin-windicss'
+// import WindiCSS from 'vite-plugin-windicss'
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +31,7 @@ export default defineConfig({
       token: `${process.env.ASTRO_VIEWER_AUTH}`
     }),
     astroImageTools,
+    UnoCSS()
   ],
   image: {
     domains: ["cdn.sanity.io"],
@@ -43,6 +44,6 @@ export default defineConfig({
     build: {
       minify: process.env.NODE_ENV === 'production' ? 'esbuild' : false
     },
-    plugins: [WindiCSS()]
+    plugins: []
   }
 });

@@ -26,31 +26,40 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
 
 <Layout pageTitle={title}>
   
-    <SanityImage node={hero} width={1220}>
-
+    <SanityImage node={hero}>
+        
+      <div class="py-54">
+      </div>
       
-      <div class:list={[]}>
-        <div class="py-8 px-4 mx-auto max-w-screen-xl text-white lg:py-16 z-1">
-          <div class="max-w-sm bg-transparent border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-5 flex flex-col items-center font-serif">
-                <h5 class="mb-2 text-2xl dark:text-white">{nameCaption}</h5>
-                <p class="mb-3 font-normal text-xl dark:text-gray-400">{titleCaption}</p>
-            </div>
-            <div>
+    </SanityImage>
+    <section class:list="w-full">
+      <div class="-mt-42 flex flex-row items-center justify-around max-w-screen-xl text-black lg:py-16 z-10">
+        <div class="max-w-sm bg-transparent border border-gray-200 rounded-lg">
+          <div class="p-5 flex flex-col items-center font-serif">
+            <div class:list={[]}>
                 <img class:list={['rounded-lg', 'w-full']} src={profileUrl} alt="portrait of Richard smiling and sitting down leaning on his right knee with his elbow leading up to his head resting on his right hand while his left arm drapes comfortably across his lap. He's wearing jeans and a dark t-shirt." />
             </div>
-          </div>
+              <h5 class="mt-4 text-2xl dark:text-white">{nameCaption}</h5>
+              <p class="mb-3 font-normal text-lg dark:text-gray-400">{titleCaption}</p>
+            </div>
+        </div>
+        <div class:list={["mb-3", "ml-24","font-normal"]}>
+          <p class:list={["text-black", "text-5xl", "dark:text-gray-400"]}>{headline}</p>
         </div>
       </div>
-    </SanityImage>
-    <section class:list={['mt-16', 'flex', 'flex-col', 'items-center']}>
+    </section>
+    <section class:list={['flex', 'flex-col', 'items-center']}>
       <div class="mb-6 max-w-screen-lg lg:mb-0">
         <h1 class="mb-4 text-indigo-900 text-4xl font-sans tracking-tight leading-none md:text-5xl lg:text-6xl">{title}</h1>
-        <p class="mb-6 font-light text-gray-400 lg:mb-8 text-2xl md:text-lg lg:text-xl">
-          <PortableText blocks={{content}}>
-          </p>
-        </div>              
+        <PortableText blocks={{content}}>
+      </div>              
     </section>
+    <p slot="contact">
+       <span>Email: {email} </span>
+       <span>Phone: {phone} </span>
+    </p>
+    <p slot="contact">
+    </p>
 </Layout>
 
 <style>

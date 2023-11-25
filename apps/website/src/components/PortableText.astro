@@ -4,6 +4,7 @@ import * as baseComponents from "astro-portabletext/components"
 import { mergeComponents } from "astro-portabletext/utils";
 import SanityImage from "./SanityImage.astro";
 import List from "./List.astro";
+import Block from "./Block.astro";
 
 import { Debug } from 'astro:components';
 
@@ -12,6 +13,16 @@ import { Debug } from 'astro:components';
 const { blocks } = Astro.props;
 
 const components = {
+  block: {
+      h1: Block,
+      h2: Block,
+      h3: Block,
+      h4: Block,
+      h5: Block,
+      h6: Block,
+      blockquote: Block,
+      normal: Block,
+    },
   list: {
     bullet: List
   },
