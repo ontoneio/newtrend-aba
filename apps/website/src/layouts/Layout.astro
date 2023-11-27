@@ -1,15 +1,19 @@
 ---
+import {
+  ImageSupportDetection,
+} from "astro-imagetools/components";
 interface Props {
   pageTitle: string | undefined;
 }
 
 const { pageTitle } = Astro.props;
-
+const year = new Date().getFullYear()
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <ImageSupportDetection />
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -25,25 +29,9 @@ const { pageTitle } = Astro.props;
       content={Astro.generator}
     />
 
-    <!-- Google fonts -->
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Inter:wght@500;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="container">
       <header class="header">
         <!-- <a
           class="header__title"
@@ -51,28 +39,36 @@ const { pageTitle } = Astro.props;
           >Astro + Sanity</a
         > -->
       </header>
-      <main>
+      <main class:list={['flex', 'flex-col','items-center']}>
         <slot />
       </main>
-      <footer class="footer">
-        <!-- <p class="footer__text">
-          Made with <svg
-            data-sanity-icon="heart-filled"
-            width="1em"
-            height="1em"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="M17 16C15.8 17.3235 12.5 20.5 12.5 20.5C12.5 20.5 9.2 17.3235 8 16C5.2 12.9118 4.5 11.7059 4.5 9.5C4.5 7.29412 6.1 5.5 8.5 5.5C10.5 5.5 11.7 6.82353 12.5 8.14706C13.3 6.82353 14.5 5.5 16.5 5.5C18.9 5.5 20.5 7.29412 20.5 9.5C20.5 11.7059 19.8 12.9118 17 16Z"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="1.2"
-            ></path></svg
-          > at Sanity
-        </p> -->
-      </footer>
+      
+
+    <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+      <div class:list={['w-full','flex', 'flex-row', 'items-center', 'justify-around']}>
+        <span class="text-xl text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="/" class="hover:underline">Newtrend-ABA</a>. All Rights Reserved.
+        </span>
+        <span class="text-2xl text-black sm:text-center dark:text-gray-400">
+          <slot name="contact"  />
+        </span>
+      </div>
+      <!-- <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6">About</a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline">Contact</a>
+          </li>
+      </ul> -->
+    </footer>
     </div>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   </body>
 </html>
 
@@ -152,7 +148,7 @@ const { pageTitle } = Astro.props;
 </style>
 
 <style is:global>
-  :root {
+  /* :root {
     --space-0: 0;
     --space-1: 4px;
     --space-2: 8px;
@@ -203,7 +199,7 @@ const { pageTitle } = Astro.props;
 
     --max-width-0: 320px;
     --max-width-1: 768px;
-  }
+  } */
 
   html {
     background-color: var(--white);
@@ -214,4 +210,63 @@ const { pageTitle } = Astro.props;
   body {
     margin: 0;
   }
+  /*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
 </style>

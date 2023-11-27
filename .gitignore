@@ -15,3 +15,5 @@ tmp
 .vercel
 .env*.local
 .nx
+.nx/cache
+.sanity

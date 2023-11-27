@@ -1,0 +1,40 @@
+---
+import imageUrlBuilder from "@sanity/image-url";
+import type { Image } from "@sanity/types";
+import { sanityClient } from "sanity:client";
+import { Debug } from 'astro:components';
+
+
+
+const builder = imageUrlBuilder(sanityClient)
+
+const { 
+  node,
+  // width = 960, 
+} = Astro.props
+
+const { hotspot, crop } = node
+// See https://www.sanity.io/docs/presenting-images for general documentation on
+// presenting images, and https://www.sanity.io/docs/image-url for specifics on
+// this builder API
+const image = node && builder
+  .image(node)
+  .fit('max')
+  .auto('format')
+  .url()
+const imageUrl = `url(${image})`
+---
+<section class:list={["relative", "w-full", "-z-1"]}>
+  <!-- <Debug {node} /> -->
+  <div class:list={['bg-wrapper','bg-no-repeat', 'bg-cover', 'bg-center', 'bg-gray-300', 'bg-blend-multiply', 'w-full']}>
+    <slot />
+  </div>
+</section>
+
+<!-- {image && <img src={image.url()} alt={node.alt || ""} title={node.alt} />} -->
+
+<style define:vars={{ imageUrl }}>
+  .bg-wrapper {
+    background-image: var(--imageUrl);
+  }
+</style>

@@ -29,9 +29,20 @@
       },
       "dev": {
         "executor": "nx:run-commands",
+        "inputs": ["{projectRoot}/**/*"],
         "options": {
           "cwd": "apps/website",
-          "command":"dotenv -e ../../.env.development -- astro dev"
+          "command":"astro dev",
+          "envFile": "{workspaceRoot}/.env"
+        }
+      },
+      "ngrok": {
+        "executor": "nx:run-commands",
+        "inputs": ["{projectRoot}/**/*"],
+        "options": {
+          "cwd": "apps/website",
+          "command":"ngrok http --domain=newtrend.ngrok.io 3000 --authtoken ${NGROK_AUTHTOKEN}",
+          "envFile": "{workspaceRoot}/.env"
         }
       },
       "preview": {

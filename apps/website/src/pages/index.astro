@@ -1,37 +1,82 @@
 ---
+import PortableText from "../components/PortableText.astro";
 import Layout from "../layouts/Layout.astro";
+import Background from "../components/Background.astro";
 import { getHome } from "../utils/sanity"
+import { urlFor } from "../utils/image"
+import SanityImage from "../components/SanityImage.astro"
 
+// import { Debug } from 'astro:components';
 
-const { title, headline, imageProfile, phone, email } = await getHome();
+const { 
+  title, 
+  headline, 
+  hero, 
+  imageProfile, 
+  nameCaption, 
+  titleCaption, 
+  content, 
+  email,
+  phone, 
+  soundcloudLink 
+ } = await getHome();
+
+const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
 ---
 
 <Layout pageTitle={title}>
-  <section class="bg-white dark:bg-gray-900 antialiased">
-    <div class="flex flex-col justify-evenly items-center max-w-screen-xl px-4 py-8 mx-auto md:flex-row md:items-start lg:px-6 sm:py-16 lg:py-24">
-      <div class="max-w-5xl flex flex-col items-center">
-        <h2 class="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl dark:text-white">
-          { headline }
-        </h2>
-        <p class="mt-4 text-base font-normal text-gray-500 sm:text-xl dark:text-gray-400">
-          { title }
-        </p>
-        <p class="text-base font-medium text-gray-500 dark:text-gray-400">
-          { phone }
-        </p>
-        <p class="text-base font-medium text-gray-500 dark:text-gray-400">
-          { email }
-        </p>
-      </div>
   
-      <div class="mt-4">
-        <div class="h-full">
-          <img class="object-cover object-top w-auto h-auto lg:h-350px rounded-lg" src={ imageProfile }
-            alt="">
-          
+    <SanityImage node={hero}>
+        
+      <div class="py-54">
+      </div>
+      
+    </SanityImage>
+    <section class:list="w-full">
+      <div class="-mt-42 flex flex-row lt-lg:flex-col items-center justify-around max-w-screen-xl text-black lg:py-16 z-10">
+        <div class="max-w-sm bg-transparent border border-gray-200 rounded-lg">
+          <div class="p-5 flex flex-col items-center font-serif">
+            <div class:list={[]}>
+                <img class:list={['rounded-lg', 'w-full']} src={profileUrl} alt="portrait of Richard smiling and sitting down leaning on his right knee with his elbow leading up to his head resting on his right hand while his left arm drapes comfortably across his lap. He's wearing jeans and a dark t-shirt." />
+            </div>
+              <h5 class="mt-4 text-2xl dark:text-white">{nameCaption}</h5>
+              <p class="mb-3 font-normal text-lg dark:text-gray-400">{titleCaption}</p>
+            </div>
+        </div>
+        <div class:list={["mb-3", "ml-24","font-normal"]}>
+          <p class:list={["text-black", "text-5xl", "dark:text-gray-400"]}>{headline}</p>
         </div>
       </div>
-  
+    </section>
+    <section class:list={['flex', 'flex-col', 'items-center', 'lg:pb-40']}>
+      <div class="mb-6 max-w-screen-2xl lg:mb-0">
+        <h1 class:list={[
+           "mb-4",
+           'lg:mx-48',
+           'gt-lg:mx-0',
+           "text-indigo-900",
+           "text-4xl",
+           "text-center",
+           "font-sans",
+           "tracking-tight",
+           "leading-none",
+           "md:text-5xl",
+           "lg:text-6xl",
+          ]}>{title}</h1>
+        <PortableText blocks={{content}}>
+      </div>              
+    </section>
+    <div class:list={['flex', 'flex-col', 'space-y-2']} slot="contact">
+      <div class:list={['flex', 'flex-row', 'items-center']}>
+        <div class="i-formkit:email"></div>
+        <p class:list={['text-3xl', 'ml-2']}>{email}</p>
+      </div>
+      <div class:list={['flex', 'flex-row', 'items-center']}>
+        <div class="i-formkit:telephone" />
+         <p class:list={['text-3xl', 'ml-2']}>{phone}</p>
+      </div>
     </div>
-  </section>
 </Layout>
+
+<style>
+</style>
