@@ -31,8 +31,7 @@ const year = new Date().getFullYear()
 
     <title>{pageTitle}</title>
   </head>
-  <body>
-    <div class="container">
+  <body class="container">
       <header class="header">
         <!-- <a
           class="header__title"
@@ -46,11 +45,13 @@ const year = new Date().getFullYear()
       
 
     <footer class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="/" class="hover:underline">Newtrend-ABA</a>. All Rights Reserved.
-      </span>
-      <span class="text-2xl text-black sm:text-center dark:text-gray-400"> 
-        <slot name="contact"  />
-      </span>
+      <div class:list={['w-full','flex', 'flex-row', 'items-center', 'justify-around']}>
+        <span class="text-xl text-gray-500 sm:text-center dark:text-gray-400">© {year} <a href="/" class="hover:underline">Newtrend-ABA</a>. All Rights Reserved.
+        </span>
+        <span class="text-2xl text-black sm:text-center dark:text-gray-400">
+          <slot name="contact"  />
+        </span>
+      </div>
       <!-- <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
               <a href="#" class="hover:underline me-4 md:me-6">About</a>
@@ -66,25 +67,6 @@ const year = new Date().getFullYear()
           </li>
       </ul> -->
     </footer>
-
-      <footer class="footer">
-        <!-- <p class="footer__text">
-          Made with <svg
-            data-sanity-icon="heart-filled"
-            width="1em"
-            height="1em"
-            viewBox="0 0 25 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="M17 16C15.8 17.3235 12.5 20.5 12.5 20.5C12.5 20.5 9.2 17.3235 8 16C5.2 12.9118 4.5 11.7059 4.5 9.5C4.5 7.29412 6.1 5.5 8.5 5.5C10.5 5.5 11.7 6.82353 12.5 8.14706C13.3 6.82353 14.5 5.5 16.5 5.5C18.9 5.5 20.5 7.29412 20.5 9.5C20.5 11.7059 19.8 12.9118 17 16Z"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="1.2"
-            ></path></svg
-          > at Sanity
-        </p> -->
-      </footer>
     </div>
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   </body>
