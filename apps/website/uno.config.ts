@@ -18,14 +18,14 @@ import {
     theme: {
       // ...
       breakpoints: {
-        xs:'360px'
-        xm:'480px'
-        sm:'568px'
-        md:'768px'
-        lg: '1024px'
-        xl: '1280px'
-        xxl: '1920px'
-        xxxl: '2560px'
+        xs:'360px',
+        xm:'480px',
+        sm:'568px',
+        md:'768px',
+        lg: '1024px',
+        xl: '1280px',
+        xxl: '1920px',
+        xxxl: '2560px',
         x4k: '3840px'
       },
     },
