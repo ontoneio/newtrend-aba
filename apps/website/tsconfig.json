@@ -19,6 +19,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "allowJs": true,
+    "checkJs": false,
     "baseUrl": "../../",
     "paths": {
       "@utils/*": [
@@ -41,6 +42,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.astro"
   ]
 }
