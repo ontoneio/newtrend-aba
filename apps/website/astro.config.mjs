@@ -31,7 +31,9 @@ export default defineConfig({
       token: `${process.env.ASTRO_VIEWER_AUTH}`
     }),
     astroImageTools,
-    UnoCSS()
+    UnoCSS({
+      // injectReset: true
+    })
   ],
   image: {
     domains: ["cdn.sanity.io"],

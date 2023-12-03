@@ -32,7 +32,7 @@
         "inputs": ["{projectRoot}/**/*"],
         "options": {
           "cwd": "apps/website",
-          "command":"astro dev",
+          "command":"astro dev --host",
           "envFile": "{workspaceRoot}/.env"
         }
       },

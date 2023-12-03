@@ -29,7 +29,7 @@ const UnknownStyle = getUnknownComponent();
   ) : styleIs("blockquote") ? (
     <blockquote {...attrs}><slot /></blockquote>
   ) : styleIs("normal") ? (
-    <p {...attrs} class:list={["text-4xl", "text-center", "mt-8", "mb-4"]}><slot /></p>
+    <p {...attrs} class:list={["text-4xl", "text-center", "mt-8", "mb-4", 'lt-lg:my-4', 'lt-md:text-3xl']}><slot /></p>
   ) : (
     <UnknownStyle {...props}><slot /></UnknownStyle>
   )
