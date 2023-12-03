@@ -33,7 +33,7 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
       
     </SanityImage>
     <section class:list="w-full">
-      <div class="-mt-42 flex flex-row lt-lg:flex-col items-center justify-around max-w-screen-xl text-black lg:py-16 z-10">
+      <div class="-mt-42 flex flex-row lt-lg:flex-col-reverse items-center justify-around max-w-screen-xl text-black lg:py-16 z-10">
         <div class="max-w-sm bg-transparent border border-gray-200 rounded-lg">
           <div class="p-5 flex flex-col items-center font-serif">
             <div class:list={[]}>
@@ -43,16 +43,16 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
               <p class="mb-3 font-normal text-lg dark:text-gray-400">{titleCaption}</p>
             </div>
         </div>
-        <div class:list={["mb-3", "ml-24","font-normal"]}>
-          <p class:list={["text-black", "text-5xl", "dark:text-gray-400"]}>{headline}</p>
+        <div class:list={['mb-3', 'ml-24','font-normal', 'lt-lg:mx-0', 'lt-lg:text-center' ]}>
+          <p class:list={['text-black', 'lt-lg:text-white', 'text-5xl', 'dark:text-gray-400']}>{headline}</p>
         </div>
       </div>
     </section>
     <section class:list={['flex', 'flex-col', 'items-center', 'lg:pb-40']}>
-      <div class="mb-6 max-w-screen-2xl lg:mb-0">
+      <div class="mb-6 lt-lg:mb-8">
         <h1 class:list={[
            "mb-4",
-           'lg:mx-48',
+           'lt-lg:mx-18',
            'gt-lg:mx-0',
            "text-indigo-900",
            "text-4xl",
@@ -66,7 +66,7 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
         <PortableText blocks={{content}}>
       </div>              
     </section>
-    <div class:list={['flex', 'flex-col', 'space-y-2']} slot="contact">
+    <div class:list={['flex', 'flex-col', 'lt-sm:items-center', 'space-y-2']} slot="contact">
       <div class:list={['flex', 'flex-row', 'items-center']}>
         <div class="i-formkit:email"></div>
         <p class:list={['text-3xl', 'ml-2']}>{email}</p>

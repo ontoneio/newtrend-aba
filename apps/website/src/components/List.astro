@@ -7,14 +7,14 @@ const featureList = node.listItem === 'bullet' ? node.children : []
 const textNode = (item: any) => item.children[0].text 
 // console.log("NODE CHILDREN", node.children)
 ---
-<ul class="space-y-4 dark:text-gray-400 mt-16 ml-68">
+<ul class="space-y-4 dark:text-gray-400 mt-16 ml-68 lt-lg:m-0 lt-lg:p-16">
     {
         featureList.map((item: any) => (
-        <li class="flex flex-row items-center space-x-10">
+        <li class="flex flex-row items-center justify-center space-x-10 lt-sm:space-x-4 lt-sm:pl-8">
             <svg class="flex-shrink-0 w-8 h-8 text-green-500 dark:text-green-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
             </svg>
-            <div class:list={['text-right', 'w-sm']}>
+            <div class:list={['text-right', 'w-sm', 'lt-sm:text-left']}>
                 <span class:list={['text-3xl']}>{ textNode(item) }</span>
             </div>
         </li>

@@ -35,6 +35,7 @@
     "@types/styled-components": "^5.1.26",
     "@unocss/preset-web-fonts": "^0.57.3",
     "@unocss/preset-wind": "^0.57.7",
+    "@unocss/reset": "^0.57.7",
     "astro": "3.6.0",
     "astro-imagetools": "^0.9.0",
     "astro-portabletext": "0.9.6",
