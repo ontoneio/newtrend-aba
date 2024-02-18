@@ -35,9 +35,11 @@ import {
         presetIcons(),
         presetTypography(),
         presetWebFonts({
+            provider: 'bunny',
             fonts: {
-                // ...
+              'sans': { name: 'DM Sans', weights: [400,500,700] }
             },
+            extendTheme: true
         }),
         presetWind(),
     ],

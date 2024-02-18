@@ -34,23 +34,23 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
     </SanityImage>
     <section class:list="w-full">
       <div class="-mt-42 flex flex-row lt-lg:flex-col-reverse items-center justify-around max-w-screen-xl text-black lg:py-16 z-10">
-        <div class="max-w-sm bg-transparent border border-gray-200 rounded-lg">
+        <div id="name-card" class="max-w-sm bg-transparent border border-gray-200 rounded-lg">
           <div class="p-5 flex flex-col items-center font-serif">
-            <div class:list={[]}>
+            <div id="image-profile" class:list={[]}>
                 <img class:list={['rounded-lg', 'w-full']} src={profileUrl} alt="portrait of Richard smiling and sitting down leaning on his right knee with his elbow leading up to his head resting on his right hand while his left arm drapes comfortably across his lap. He's wearing jeans and a dark t-shirt." />
             </div>
-              <h5 class="mt-4 text-2xl dark:text-white">{nameCaption}</h5>
-              <p class="mb-3 font-normal text-lg dark:text-gray-400">{titleCaption}</p>
+              <h5 id="name" class="mt-4 text-2xl dark:text-white">{nameCaption}</h5>
+              <p id="title" class="mb-3 font-normal text-lg dark:text-gray-400">{titleCaption}</p>
             </div>
         </div>
-        <div class:list={['mb-3', 'ml-24','font-normal', 'lt-lg:mx-0', 'lt-lg:text-center' ]}>
+        <div id="headline" class:list={['mb-3', 'ml-24','font-normal', 'lt-lg:mx-0', 'lt-lg:text-center' ]}>
           <p class:list={['text-black', 'lt-lg:text-white', 'text-5xl', 'dark:text-gray-400']}>{headline}</p>
         </div>
       </div>
     </section>
     <section class:list={['flex', 'flex-col', 'items-center', 'lg:pb-40']}>
       <div class="mb-6 lt-lg:mb-8">
-        <h1 class:list={[
+        <h1 id="biz-name" class:list={[
            "mb-4",
            'lt-lg:mx-18',
            'gt-lg:mx-0',
@@ -66,14 +66,25 @@ const profileUrl = urlFor(imageProfile).fit('max').auto('format').url()
         <PortableText blocks={{content}}>
       </div>              
     </section>
-    <div class:list={['flex', 'flex-col', 'lt-sm:items-center', 'space-y-2']} slot="contact">
+    <div 
+      id="contact-card" 
+      class:list={[
+        'flex', 
+        'flex-col', 
+        'lt-sm:items-center', 
+        'space-y-2', 
+        'text-3xl',
+        'lt-md:text-2xl'
+      ]} 
+      slot="contact"
+    >
       <div class:list={['flex', 'flex-row', 'items-center']}>
         <div class="i-formkit:email"></div>
-        <p class:list={['text-3xl', 'ml-2']}>{email}</p>
+        <p class:list={['ml-2']}>{email}</p>
       </div>
       <div class:list={['flex', 'flex-row', 'items-center']}>
         <div class="i-formkit:telephone" />
-         <p class:list={['text-3xl', 'ml-2']}>{phone}</p>
+         <p class:list={['ml-2']}>{phone}</p>
       </div>
     </div>
 </Layout>
